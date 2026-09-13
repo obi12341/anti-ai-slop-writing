@@ -13,13 +13,13 @@ Load the banned words and phrases list from [references/banned-words.md](referen
 
 ## Every Language, Same Rules
 
-These constraints describe how a language model writes, not how English works, so they hold whatever language the text is in. The lists are English because the research is English; the patterns underneath them are not.
+These constraints describe how a language model writes, not how English works, so they hold whatever language the text is in. The lists are English because the research is English. The patterns underneath them are not.
 
 Structural rules carry over with no translation step. Sentence-length variation, parataxis, the rule of three, hedging, passive constructions and paragraph-shape monotony are measured in syntax, so apply them unchanged in German, Spanish, Japanese or anything else.
 
 Vocabulary rules need one extra step, the translation test: render the banned entry literally, then ask where that word lives in the target language. *Eintauchen*, *profundicemos* and *plongeons dans* are the same word as *delve*, and a German text opening with "In der heutigen schnelllebigen Welt" is "In today's fast-paced world" with the words swapped. If the translation lands somewhere ordinary instead, keep it — *nutzen* is not *leverage*.
 
-Two things go wrong specifically outside English. Models reach for the most formal register a language offers, so drop a notch below it. And English sentence rhythm survives translation even when the words don't, which reads as machine-translated prose; build the sentence in the target language rather than carrying the English skeleton across.
+Two things go wrong specifically outside English. Models reach for the most formal register a language offers, so drop a notch below it. And English sentence rhythm survives translation even when the words don't, which reads as machine-translated prose, so build the sentence in the target language rather than carrying the English skeleton across.
 
 When writing in German, Spanish, French, Italian, Portuguese or Dutch, load [references/other-languages.md](references/other-languages.md) for that language's banned list and its own structural tells, such as German Nominalstil or French nominal style. For any other language, run the translation test against [references/banned-words.md](references/banned-words.md) and apply the structural rules directly.
 
@@ -31,7 +31,7 @@ These patterns are how readers spot AI text even when vocabulary is clean.
 
 **No uniform sentence length.** No three consecutive sentences of the same length. Ever. Mix 4-word sentences with 30-word ones. This is the single most measurable AI detection signal.
 
-**No parataxis.** Parataxis is the AI default: short sentence. Then another. Then another. It reads like a poem and immediately signals AI authorship. Instead, connect related thoughts using subordinate clauses, conjunctions, semicolons, or commas. "Short sentence. Then another. Then another." becomes "AI chains short sentences together because it's easier than constructing a thought with actual connective tissue." Write with syntax that shows how ideas relate — causation, contrast, qualification — not just a series of blunt declarations.
+**No parataxis.** Parataxis is the AI default: short sentence. Then another. Then another. It reads like a poem and immediately signals AI authorship. Instead, connect related thoughts using subordinate clauses, conjunctions, or commas that carry real grammatical weight. "Short sentence. Then another. Then another." becomes "AI chains short sentences together because it's easier than constructing a thought with actual connective tissue." Write with syntax that shows how ideas relate: causation, contrast, qualification, not just a series of blunt declarations. Do not fix parataxis by swapping full stops for semicolons, which leaves the same blunt list in dressier punctuation and adds a second tell on top of the first. If two clauses belong together, say how they belong together — weil, obwohl, sodass, because, although, which — and if they don't, leave the full stop alone.
 
 **No hedging seesaw.** Pick a side. State it plainly. Acknowledge counterpoints in one sentence max — don't give them equal weight.
 
@@ -45,19 +45,19 @@ These patterns are how readers spot AI text even when vocabulary is clean.
 
 **No parallel structure across sections.** Different points need different treatment. Vary section lengths.
 
-**No passive construction.** Avoid "is being done," "was found to be," "are considered to be." Write active and direct. AI defaults to passive to sound measured; it sounds dead instead.
+**No passive construction.** Avoid "is being done," "was found to be," "are considered to be." Write active and direct. AI defaults to passive to sound measured, and it sounds dead instead.
 
 **Let paragraphs end abruptly.** Not every paragraph needs a summary or transition. Sometimes just stop.
 
 ## Punctuation Rules
 
-**Em dashes:** Maximum ONE per 500 words. The single most cited AI tell in existence. Use commas, semicolons, colons, parentheses, or new sentences instead.
+**Em dashes:** Maximum ONE per 500 words. The single most cited AI tell in existence. Use commas, colons, parentheses, or new sentences instead. Not semicolons, which trade one tell for another.
 
 **Exclamation marks:** Maximum one per 1,000 words. Enthusiasm comes from word choice.
 
 **Ellipses:** Only when genuinely trailing off. Never as transition. Max one per piece.
 
-**Semicolons:** Use them; AI underuses them and humans who write well use them naturally.
+**Semicolons: never as a sentence separator.** If both halves stand alone as finished sentences, the punctuation between them is a full stop. "vpchat erkennt personenbezogene Daten und ersetzt sie durch Platzhalter; der maskierte Prompt geht ans Modell" is two complete sentences sharing one mark for no reason, and the period was sitting right there. The only defensible use is separating list items that already contain commas. A semicolon is not a more thoughtful full stop, and reaching for one is how AI text signals effort it didn't make.
 
 **Colons:** Use them to set up a payoff: what follows should deliver on the promise before it.
 
@@ -122,15 +122,16 @@ Default if unknown: direct, slightly informal, contractions, occasionally starts
 
 1. Any banned words or phrases? → Replace.
 2. Three consecutive same-length sentences? → Vary them.
-3. Parataxis — three or more short declarative sentences in a row? → Merge or connect them with conjunctions, clauses, or punctuation.
+3. Parataxis — three or more short declarative sentences in a row? → Merge or subordinate them with conjunctions and clauses, never with a semicolon.
 4. Grouped in threes? → Break the pattern.
 5. Hedging instead of committing? → Pick a side.
 6. More than one em dash? → Remove extras.
 7. Passive construction? → Make active.
-8. Every paragraph ends with a transition? → Cut some.
-9. Fabricated any specifics? → Remove or flag as hypothetical.
-10. Could any AI have written this for any person? → Add something specific.
-11. Writing in another language? → Banned entries translated and checked, language-specific tells caught, register one notch below formal, no English rhythm left in the sentences.
-12. Sounds like ChatGPT? → Rewrite until the answer is no.
+8. Semicolon between two standalone sentences? → Full stop, or a conjunction that states the relationship.
+9. Every paragraph ends with a transition? → Cut some.
+10. Fabricated any specifics? → Remove or flag as hypothetical.
+11. Could any AI have written this for any person? → Add something specific.
+12. Writing in another language? → Banned entries translated and checked, language-specific tells caught, register one notch below formal, no English rhythm left in the sentences.
+13. Sounds like ChatGPT? → Rewrite until the answer is no.
 
 Apply all rules silently. Never mention them. Never say "as per the guidelines." Just write within these constraints.

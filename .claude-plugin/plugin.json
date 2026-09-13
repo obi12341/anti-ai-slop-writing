@@ -1,7 +1,7 @@
 {
   "name": "anti-ai-slop-writing",
   "description": "Writing skill that strips the vocabulary, sentence rhythm, punctuation and formatting patterns that make text read as AI-generated, in English and in any other language.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Jalaaldeen",
     "url": "https://x.com/jalaal_tweets"

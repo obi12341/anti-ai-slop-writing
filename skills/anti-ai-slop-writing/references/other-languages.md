@@ -1,6 +1,6 @@
 # Applying the Rules Outside English
 
-The tells catalogued in [banned-words.md](banned-words.md) come from English research, but they describe how a language model writes rather than how English works. A model trained on the same corporate-blog register in German, Spanish or French produces the same text there. "Lass uns eintauchen" is "let's dive in"; "In der heutigen schnelllebigen Welt" is "In today's fast-paced world" with the words swapped.
+The tells catalogued in [banned-words.md](banned-words.md) come from English research, but they describe how a language model writes rather than how English works. A model trained on the same corporate-blog register in German, Spanish or French produces the same text there. "Lass uns eintauchen" is "let's dive in", and "In der heutigen schnelllebigen Welt" is "In today's fast-paced world" with the words swapped.
 
 ## The Translation Test
 
@@ -20,9 +20,9 @@ Banned phrases and openers: "In der heutigen schnelllebigen Welt", "In der heuti
 
 German-specific structure:
 
-**Nominalstil.** The clearest tell in German AI text. "Die Durchführung der Optimierung erfolgt im Anschluss" wants to be "Danach optimieren wir." Turn the nouns back into verbs; if a sentence carries three nouns ending in -ung, rewrite it.
+**Nominalstil.** The clearest tell in German AI text. "Die Durchführung der Optimierung erfolgt im Anschluss" wants to be "Danach optimieren wir." Turn the nouns back into verbs, and if a sentence carries three nouns ending in -ung, rewrite it.
 
-**Passive and the impersonal man.** German models hide behind "es wird … durchgeführt" and "man sollte" because it sounds objective; name who does the thing.
+**Passive and the impersonal man.** German models hide behind "es wird … durchgeführt" and "man sollte" because it sounds objective, so name who does the thing.
 
 **Invented compounds.** Models stack nouns into words nobody says (Kundenzufriedenheitssteigerungsmaßnahme). If the compound does not already exist in the wild, break it into a phrase.
 
@@ -31,6 +31,8 @@ German-specific structure:
 **Modal cushioning.** "kann dabei helfen, … zu können" and "sollte in Betracht gezogen werden" — pick a side and say it.
 
 **Stacked anglicisms.** Insights, Learnings, Pain Points, Deep Dive, Roadmap in a German sentence marks the text as translated consultancy prose, not as modern German.
+
+**Semikolon.** Real German prose uses it far less than English does, so a semicolon holding two full sentences together reads as translated English on top of the general ban. Point, Komma, oder eine Konjunktion, die sagt, wie die Sätze zusammenhängen.
 
 Punctuation and convention: quotation marks are „so", not "so"; the Gedankenstrich is a spaced en dash (–) and the same limit applies as for the English em dash, one per 500 words; commas follow grammar, so do not scatter them for rhythm the way English does. Pick *du* or *Sie* and hold it for the whole text. Use gendered forms (Kolleg:innen, Kolleginnen und Kollegen) only if the person you write for already does.
 

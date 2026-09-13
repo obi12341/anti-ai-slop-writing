@@ -5,14 +5,14 @@
     "url": "https://github.com/obi12341"
   },
   "description": "Marketplace hosting the anti-ai-slop-writing skill for Claude Code.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "plugins": [
     {
       "name": "anti-ai-slop-writing",
       "source": "./",
       "displayName": "Anti-AI-Slop Writing",
       "description": "Writing skill that strips the vocabulary, sentence rhythm, punctuation and formatting patterns that make text read as AI-generated, in English and in any other language.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": {
         "name": "Jalaaldeen",
         "url": "https://x.com/jalaal_tweets"
