@@ -1,0 +1,13 @@
+{
+  "name": "anti-ai-slop-writing",
+  "description": "Writing skill that strips the vocabulary, sentence rhythm, punctuation and formatting patterns that make text read as AI-generated.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jalaaldeen",
+    "url": "https://x.com/jalaal_tweets"
+  },
+  "homepage": "https://github.com/obi12341/anti-ai-slop-writing",
+  "repository": "https://github.com/obi12341/anti-ai-slop-writing",
+  "license": "MIT",
+  "keywords": ["writing", "editing", "copywriting", "style", "ai-detection"]
+}

@@ -1,69 +1,84 @@
 # Anti-AI-Slop Writing Skill
 
-A Claude Code skill (and universal SKILL.md) that forces any AI to produce human-sounding text by eliminating statistically detectable AI writing patterns.
+A Claude Code skill (and a portable SKILL.md) that makes an AI write like a person, by banning the vocabulary, sentence rhythm, punctuation habits and formatting tics that readers and detection tools flag as machine-written.
 
 ## What It Does
 
-Every piece of text the AI produces — tweets, emails, articles, bios, reports, copy and message passes through constraints that eliminate the vocabulary, structure, punctuation, and formatting patterns that readers and detection tools flag as AI-generated.
+Anything the AI writes for you — a tweet, an email, an article, a bio, a report, a bit of landing-page copy — gets filtered through a set of hard constraints before it reaches you.
 
-Based on research from Carnegie Mellon (2025), Wikipedia's Signs of AI Writing page, Buffer's 52M post analysis, and community detection patterns documented across X and Reddit.
+The rules come from research by Carnegie Mellon (2025), Wikipedia's *Signs of AI Writing* page, Buffer's analysis of 52M posts, and detection patterns people have catalogued on X and Reddit.
 
 ## What It Catches
 
-- **50+ banned words** flagged across multiple AI detection studies (delve, tapestry, landscape, testament, vibrant, pivotal, etc.)
-- **35+ banned phrases** ("In today's competitive...", "It's worth noting...", "Not just X, but Y", etc.)
-- **16 banned sentence openers** ("Certainly,", "Moreover,", "Additionally,", etc.)
-- **10 structural patterns** (rule of three, uniform sentence length, hedging seesaw, corporate pep talk, passive voice, etc.)
-- **Punctuation tells** (em dash overuse, exclamation spam, ellipsis abuse)
-- **Formatting leaks** (markdown in plain text, emoji bullet points, hashtag stacks)
-- **Accuracy failures** (invented statistics, fabricated quotes, fake anecdotes)
+- **53 banned words** flagged across several AI-detection studies: delve, tapestry, landscape, testament, vibrant, pivotal and the rest of that crowd
+- **36 banned phrases** — "In today's competitive...", "It's worth noting...", "Not just X, but Y"
+- **16 banned sentence openers** such as "Certainly," "Moreover," and "Additionally,"
+- **11 structural patterns**: the rule of three, uniform sentence length, parataxis, the hedging seesaw, corporate pep talk, passive voice
+- **Punctuation tells** — em dash overuse, exclamation spam, ellipsis abuse
+- **Formatting leaks** like markdown in plain-text contexts, emoji bullets, hashtag stacks
+- **Accuracy failures**: invented statistics, fabricated quotes, fake anecdotes
+
+Plus a per-model list of first-word tells, because ChatGPT, Claude, Grok, Gemini and DeepSeek each open a response in their own predictable way.
 
 ## Installation
 
 ### Claude Code (plugin marketplace)
 
-```bash
-/plugin marketplace add jalaalrd/founder-toolkit
+```
+/plugin marketplace add obi12341/anti-ai-slop-writing
+/plugin install anti-ai-slop-writing@anti-ai-slop
 ```
 
 ### Claude Code (manual)
 
-Copy the `anti-ai-slop-writing` folder to `~/.claude/skills/`:
+Copy the skill folder into your personal skills directory:
 
 ```bash
-cp -r skills/anti-ai-slop-writing ~/.claude/skills/
+git clone https://github.com/obi12341/anti-ai-slop-writing.git
+cp -r anti-ai-slop-writing/skills/anti-ai-slop-writing ~/.claude/skills/
 ```
 
-### Other AI Tools (Cursor, Codex, Gemini CLI, etc.)
+For a single project instead, copy it to `.claude/skills/` in that repo.
 
-Copy the `SKILL.md` file to your tool's skills directory. The SKILL.md format is cross-compatible with 11+ coding agents.
+### Other AI tools (Cursor, Codex, Gemini CLI, etc.)
 
-### Any AI Chat (ChatGPT, Claude.ai, Gemini, etc.)
+Copy `skills/anti-ai-slop-writing/` into your tool's skills directory. Keep the `references/` folder next to `SKILL.md`; the skill loads the banned-words list from there on demand.
 
-Copy the contents of `SKILL.md` and paste it at the start of any conversation. It works as a system-level writing constraint.
+### Any AI chat (ChatGPT, Claude.ai, Gemini, etc.)
+
+Paste the contents of `SKILL.md` and `references/banned-words.md` at the start of the conversation. It works as a system-level writing constraint.
 
 ## Usage
 
-The skill activates automatically when you ask the AI to write anything. You can also invoke it directly:
+The skill fires on its own when you ask for writing. To force it:
 
 ```
 /anti-ai-slop-writing
 ```
 
-Or just ask: "Write this tweet / email / article and make it sound human."
+Installed as a plugin it also answers to `/anti-ai-slop-writing:anti-ai-slop-writing` if another command has already claimed the short name.
 
-## File Structure
+Or just ask: "write this email and make it sound human."
+
+## Repository Layout
 
 ```
-anti-ai-slop-writing/
-├── SKILL.md                          # Core rules (under 500 lines)
-└── references/
-    └── banned-words.md               # Full banned vocabulary list (loaded on demand)
+.
+├── .claude-plugin/
+│   ├── marketplace.json              # marketplace manifest (/plugin marketplace add)
+│   └── plugin.json                   # plugin metadata
+└── skills/
+    └── anti-ai-slop-writing/
+        ├── SKILL.md                  # core rules, always loaded
+        └── references/
+            └── banned-words.md       # full banned vocabulary, loaded on demand
 ```
+
+The repository root doubles as the plugin root, so the marketplace entry points at `./` and Claude Code picks up `skills/` from there.
 
 ## Author
 
-Created by [Jalaaldeen](https://x.com/jalaal_tweets) — builder of Wardex, ZakatChain, and open-source AI tooling for founders.
+Created by [Jalaaldeen](https://x.com/jalaal_tweets), builder of Wardex, ZakatChain, and open-source AI tooling for founders. This repository packages the skill as an installable Claude Code plugin and adds the parataxis rule.
 
 ## License
 
