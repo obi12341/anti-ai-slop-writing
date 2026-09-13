@@ -20,6 +20,16 @@ The rules come from research by Carnegie Mellon (2025), Wikipedia's *Signs of AI
 
 Plus a per-model list of first-word tells, because ChatGPT, Claude, Grok, Gemini and DeepSeek each open a response in their own predictable way.
 
+## Other Languages
+
+The rules are not English rules. They describe how a language model writes, so the same slop shows up in German, Spanish or French with the words swapped: *eintauchen* is *delve*, and "In der heutigen schnelllebigen Welt" is "In today's fast-paced world."
+
+Structural rules apply unchanged in any language, because sentence-length variation, parataxis and the rule of three are measured in syntax. Vocabulary rules run through a translation test: render the banned word literally, and if it lands on something native speakers meet mostly in press releases, it's banned there too.
+
+`references/other-languages.md` carries dedicated lists for German, Spanish, French, Italian, Portuguese and Dutch, along with the tells each language has on its own — German Nominalstil and "sowie" padding, Spanish gerund chains, French spacing before `:` and `?`. Anything outside that set is covered by the translation test.
+
+Two extra traps outside English: models default to the stiffest register a language offers, and English sentence rhythm survives translation even when the vocabulary doesn't.
+
 ## Installation
 
 ### Claude Code (plugin marketplace)
@@ -46,7 +56,7 @@ Copy `skills/anti-ai-slop-writing/` into your tool's skills directory. Keep the 
 
 ### Any AI chat (ChatGPT, Claude.ai, Gemini, etc.)
 
-Paste the contents of `SKILL.md` and `references/banned-words.md` at the start of the conversation. It works as a system-level writing constraint.
+Paste the contents of `SKILL.md` and `references/banned-words.md` at the start of the conversation, plus `references/other-languages.md` if you write in something other than English. It works as a system-level writing constraint.
 
 ## Usage
 
@@ -71,14 +81,15 @@ Or just ask: "write this email and make it sound human."
     └── anti-ai-slop-writing/
         ├── SKILL.md                  # core rules, always loaded
         └── references/
-            └── banned-words.md       # full banned vocabulary, loaded on demand
+            ├── banned-words.md       # full banned vocabulary, loaded on demand
+            └── other-languages.md    # non-English lists and tells, loaded on demand
 ```
 
 The repository root doubles as the plugin root, so the marketplace entry points at `./` and Claude Code picks up `skills/` from there.
 
 ## Author
 
-Created by [Jalaaldeen](https://x.com/jalaal_tweets), builder of Wardex, ZakatChain, and open-source AI tooling for founders. This repository packages the skill as an installable Claude Code plugin and adds the parataxis rule.
+Created by [Jalaaldeen](https://x.com/jalaal_tweets), builder of Wardex, ZakatChain, and open-source AI tooling for founders. This repository packages the skill as an installable Claude Code plugin, adds the parataxis rule, and extends the constraints to languages other than English.
 
 ## License
 

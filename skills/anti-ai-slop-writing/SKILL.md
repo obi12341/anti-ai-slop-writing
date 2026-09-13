@@ -1,6 +1,6 @@
 ---
 name: anti-ai-slop-writing
-description: Produces human-sounding text that avoids detectable AI writing patterns. Activates on any writing task — tweets, emails, articles, bios, captions, reports, copy, messages, LinkedIn posts, cover letters, README files, or any content where the output must not read as AI-generated. Enforces banned vocabulary, structural variety, punctuation discipline, accuracy rules, and voice calibration. Use when the user says "write," "draft," "rewrite," "make this sound human," "anti-slop," "not AI," or any variation of wanting authentic-sounding output.
+description: Produces human-sounding text that avoids detectable AI writing patterns. Activates on any writing task — tweets, emails, articles, bios, captions, reports, copy, messages, LinkedIn posts, cover letters, README files, or any content where the output must not read as AI-generated. Enforces banned vocabulary, structural variety, punctuation discipline, accuracy rules, and voice calibration. Applies in every language, not only English. Use when the user says "write," "draft," "rewrite," "make this sound human," "anti-slop," "not AI," or asks in another language ("schreib," "verfasse," "umformulieren," "soll nicht nach KI klingen," "escribe," "écris"), or any variation of wanting authentic-sounding output.
 ---
 
 # Anti-AI-Slop Writing Directive v2
@@ -10,6 +10,18 @@ Produces text that avoids statistically detectable AI writing patterns. Every pi
 ## Before Writing Anything
 
 Load the banned words and phrases list from [references/banned-words.md](references/banned-words.md). Never use any word or phrase on that list. If reaching for one, replace it with a concrete specific alternative or restructure the sentence.
+
+## Every Language, Same Rules
+
+These constraints describe how a language model writes, not how English works, so they hold whatever language the text is in. The lists are English because the research is English; the patterns underneath them are not.
+
+Structural rules carry over with no translation step. Sentence-length variation, parataxis, the rule of three, hedging, passive constructions and paragraph-shape monotony are measured in syntax, so apply them unchanged in German, Spanish, Japanese or anything else.
+
+Vocabulary rules need one extra step, the translation test: render the banned entry literally, then ask where that word lives in the target language. *Eintauchen*, *profundicemos* and *plongeons dans* are the same word as *delve*, and a German text opening with "In der heutigen schnelllebigen Welt" is "In today's fast-paced world" with the words swapped. If the translation lands somewhere ordinary instead, keep it — *nutzen* is not *leverage*.
+
+Two things go wrong specifically outside English. Models reach for the most formal register a language offers, so drop a notch below it. And English sentence rhythm survives translation even when the words don't, which reads as machine-translated prose; build the sentence in the target language rather than carrying the English skeleton across.
+
+When writing in German, Spanish, French, Italian, Portuguese or Dutch, load [references/other-languages.md](references/other-languages.md) for that language's banned list and its own structural tells, such as German Nominalstil or French nominal style. For any other language, run the translation test against [references/banned-words.md](references/banned-words.md) and apply the structural rules directly.
 
 ## Structural Rules
 
@@ -101,6 +113,7 @@ When writing for a specific person, match THEIR voice. Ask yourself:
 - Does this person swear? Use slang? Write long or short?
 - What humour do they use — dry, sarcastic, self-deprecating, absurd?
 - What would this person NEVER say?
+- Which language and which variant do they write in — de-DE or de-AT, es-ES or es-MX, and do they mix English terms in or not?
 - What platform is this for? Cover letter ≠ tweet ≠ LinkedIn ≠ DM.
 
 Default if unknown: direct, slightly informal, contractions, occasionally starts with "And" or "But," doesn't over-explain, trusts the reader.
@@ -117,6 +130,7 @@ Default if unknown: direct, slightly informal, contractions, occasionally starts
 8. Every paragraph ends with a transition? → Cut some.
 9. Fabricated any specifics? → Remove or flag as hypothetical.
 10. Could any AI have written this for any person? → Add something specific.
-11. Sounds like ChatGPT? → Rewrite until the answer is no.
+11. Writing in another language? → Banned entries translated and checked, language-specific tells caught, register one notch below formal, no English rhythm left in the sentences.
+12. Sounds like ChatGPT? → Rewrite until the answer is no.
 
 Apply all rules silently. Never mention them. Never say "as per the guidelines." Just write within these constraints.

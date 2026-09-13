@@ -2,6 +2,8 @@
 
 These are statistically flagged as AI-generated text markers across multiple studies (Carnegie Mellon 2025, Wikipedia Signs of AI Writing, Buffer 52M post analysis). Never use any of these. Replace with concrete alternatives or restructure the sentence.
 
+The list is English, the behaviour behind it is not. Most entries stay banned once translated — see [other-languages.md](other-languages.md) for German, Spanish, French, Italian, Portuguese and Dutch, and for the translation test that covers every other language.
+
 ## Banned Vocabulary
 
 delve / delves / delving, tapestry, landscape (figurative), testament (e.g. "a testament to"), vibrant, pivotal, crucial, intricate / intricacies, meticulous / meticulously, bolster / bolstered, garner / garnered, underscore / underscores, interplay, multifaceted, nuanced (as filler), foster / fostering, leverage (as verb), utilize (say "use"), commence (say "start"), facilitate, encompass / encompassing, paramount, groundbreaking, cutting-edge, game-changing / game-changer, transformative, revolutionise / revolutionize, seamless / seamlessly, robust (outside engineering), comprehensive (describing own output), endeavour / endeavor, aforementioned, harnessing, spearheading, navigating (figurative), showcasing, highlighting, emphasizing, enhancing, unprecedented, remarkable, stunning, profound, epic (non-literal), in essence, thought leader / thought leadership, synergy / synergies, pain points, value add / value proposition (casual contexts), moving forward, touch base / circle back, rest assured, it goes without saying
