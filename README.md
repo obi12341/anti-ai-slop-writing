@@ -14,7 +14,7 @@ The rules come from research by Carnegie Mellon (2025), Wikipedia's *Signs of AI
 - **36 banned phrases** — "In today's competitive...", "It's worth noting...", "Not just X, but Y"
 - **16 banned sentence openers** such as "Certainly," "Moreover," and "Additionally,"
 - **11 structural patterns**: the rule of three, uniform sentence length, parataxis, the hedging seesaw, corporate pep talk, passive voice
-- **Punctuation tells** — em dash overuse, exclamation spam, ellipsis abuse
+- **Punctuation tells** — em dash overuse, exclamation spam, ellipsis abuse, the semicolon used as a dressed-up full stop
 - **Formatting leaks** like markdown in plain-text contexts, emoji bullets, hashtag stacks
 - **Accuracy failures**: invented statistics, fabricated quotes, fake anecdotes
 
@@ -52,7 +52,7 @@ For a single project instead, copy it to `.claude/skills/` in that repo.
 
 ### Other AI tools (Cursor, Codex, Gemini CLI, etc.)
 
-Copy `skills/anti-ai-slop-writing/` into your tool's skills directory. Keep the `references/` folder next to `SKILL.md`; the skill loads the banned-words list from there on demand.
+Copy `skills/anti-ai-slop-writing/` into your tool's skills directory. Keep the `references/` folder next to `SKILL.md`, because the skill loads the banned-words list from there on demand.
 
 ### Any AI chat (ChatGPT, Claude.ai, Gemini, etc.)
 
